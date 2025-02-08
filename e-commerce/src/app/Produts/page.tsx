@@ -12,7 +12,7 @@ import { addToCart } from "../actions/actions"
 import { urlFor } from "@/sanity/lib/image"
 import Link from "next/link"
 
-export default function ShopGrid () {
+export default function Products () {
     
       const [product, setProduct] = useState<Product[]>([])
     

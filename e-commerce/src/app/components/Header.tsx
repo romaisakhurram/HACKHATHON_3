@@ -28,7 +28,7 @@ export default  function Header () {
                             </div>
                             )}
                         </li>
-                        <li className="hover:text-pink-600"> <Link href="/product">product</Link></li>
+                        <li className="hover:text-pink-600"> <Link href="/product/[slug]/">product</Link></li>
                         <li className="hover:text-pink-600"><Link href="/Blog">Blog</Link></li>
                         <li className="hover:text-pink-600"><Link href="/Shop">Shop</Link></li>
                         <li className="hover:text-pink-600"><Link href="/Contact">Contact</Link></li>

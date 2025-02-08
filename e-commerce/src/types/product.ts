@@ -1,5 +1,4 @@
 export interface Product {
-    map(arg0: (product: any) => import("react").JSX.Element): import("react").ReactNode | Iterable<import("react").ReactNode>;
     _id: string;
     _type: 'product';
     name: string;

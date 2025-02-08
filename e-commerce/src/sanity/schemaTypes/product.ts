@@ -1,4 +1,4 @@
- const getProductSchema = {
+ const ProductSchema = {
     name: 'product',
     type: 'document',
     title: 'Product',
@@ -63,4 +63,4 @@
       },
     ],
   };
-export default getProductSchema;
+export default ProductSchema;

@@ -133,7 +133,7 @@ export default function ShoppingCart() {
                           )}
                           <div>
                             <p className="font-semibold">{item.name}</p>
-                            <p className="text-sm text-gray-500">{item.category._type}</p>
+                            <p className="text-sm text-gray-500">{item._type}</p>
                           </div>
                         </div>
                       </td>

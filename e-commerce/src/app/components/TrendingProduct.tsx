@@ -74,7 +74,7 @@ export default function TrendingProduct () {
                 <div className="w-[200] h-[150] bg-pink-100 border border-gray-300 p-10 hover:scale-105 transition-transform duration-200">
                     <div>
                       <h1 className="text-[26px] font-bold font-[Josefin Sans] text-[#1A0B5B]">23% off in all Products</h1>
-                      <span className="text-md text-pink-600 underline underline-offset-3">Shop Now</span>
+                      <span className="text-md text-pink-600 underline underline-offset-3"><Link href="/Products">Shop Now</Link></span>
                     </div>
                    <div>
                       <Image
@@ -89,7 +89,7 @@ export default function TrendingProduct () {
                 <div className="w-[400] h-[200] bg-[#F2F0FF] border border-gray-300 p-10 hover:scale-105 transition-transform duration-200">
                     <div>
                         <h1 className="text-[26px] font-bold font-[JosefinSans] text-[#1A0B5B]">23% off in all Products</h1>
-                        <span className="text-md text-pink-600 underline underline-offset-3">Shop Now</span>
+                        <span className="text-md text-pink-600 underline underline-offset-3"><Link href="/Products">Shop Now</Link></span>
                     </div>
                     <div>
                      <Image

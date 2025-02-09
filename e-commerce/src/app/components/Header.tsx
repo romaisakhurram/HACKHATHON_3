@@ -19,7 +19,6 @@ export default  function Header () {
                             {isDropdownOpen && (
                             <div className="absolute bg-white shadow-md mt-2 w-40">
                                 <ul>
-                                    <li className="hover:bg-gray-100 hover:text-pink-600 px-4 py-2"><Link href="/ShopGrid">ShopGrid</Link></li>
                                     <li className="hover:bg-gray-100 hover:text-pink-600 px-4 py-2"><Link href="/ShoppingCart">ShoppingCart</Link></li>
                                     <li className="hover:bg-gray-100 hover:text-pink-600 px-4 py-2"><Link href="/ShopLeftSide">ShopLeftSide</Link></li>
                                     <li className="hover:bg-gray-100 hover:text-pink-600 px-4 py-2"><Link href="/About">About</Link></li>

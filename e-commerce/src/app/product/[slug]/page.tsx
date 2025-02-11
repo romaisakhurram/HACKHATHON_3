@@ -89,7 +89,7 @@ export default function ProductPage() {
                   alt={product.name}
                   width={80}
                   height={50}
-                  className="mb-2 mt-2 bg-pink-300"
+                  className="mb-2 mt-2 bg-slate-300"
                 />
               )}
             </div>
@@ -100,7 +100,7 @@ export default function ProductPage() {
                   alt={product.name}
                   width={80}
                   height={50}
-                  className="mb-2 mt-2 bg-blue-300"
+                  className="mb-2 mt-2 bg-slate-300"
                 />
               )}
             </div>
@@ -111,7 +111,7 @@ export default function ProductPage() {
                   alt={product.name}
                   width={80}
                   height={50}
-                  className="mb-2 mt-2 bg-purple-400"
+                  className="mb-2 mt-2 bg-slate-300"
                 />
               )}
             </div>
@@ -121,9 +121,9 @@ export default function ProductPage() {
               <Image
                 src={urlFor(product.image).url()}
                 alt={product.name}
-                width={120}
-                height={250}
-                className="mb-2 mt-2 h-60 bg-slate-400"
+                width={150}
+                height={280}
+                className="mb-2 mt-2 h-60 bg-slate-300"
               />
             )}
           </div>
@@ -131,7 +131,7 @@ export default function ProductPage() {
             <h2 className="text-2xl font-serif">{product.name}</h2>
             <p className="text-gray-400 text-md">
               {product.price}
-              <del className="text-pink-600 text-md">$1800</del>
+              <del className="text-pink-600 text-md">{product.discountPercentage}</del>
             </p>
             <p className="font-bold">Color</p>
             <p className="text-gray-400 text-md font-semibold mb-2">
@@ -143,7 +143,7 @@ export default function ProductPage() {
             >
               Add to cart <CiHeart className="w-8 h-6" />
             </button>
-            <p className="font-bold font-serif mb-2">{product._type}</p>
+            <p className="font-bold font-serif mb-2">{product.isFeaturedProduct}</p>
             <p className="font-bold font-serif mb-2">Tags:</p>
             <p className="font-bold font-serif flex gap-2">
               Share:
@@ -221,13 +221,13 @@ export default function ProductPage() {
           Latest Product
         </h1>
         <ul className="w-full h-[500] flex justify-center gap-10 mt-5">
-          {[ {name : "Men Shirt" , price :"$500" , Image: "/images/cartpic1"},
-              {name : "Women Shirt" , price :"$500" , Image: "/images/cartpic2"},
-              {name : "Girls Shirt" , price :"$500" , Image: "/images/cartpic3"},
-              {name : "Girls Shirt" , price :"$500" , Image: "/images/cartpic4"},
+          {[  {id: "1" , name : "Men Shirt" , price :"$500" , Image: "/images/cartpic1.png"},
+              {id: "2" , name : "Women Shirt" , price :"$500" , Image: "/images/cartpic2.png"},
+              {id: "3" , name : "Girls Shirt" , price :"$500" , Image: "/images/cartpic3.png"},
+              {id: "4" , name : "Girls Shirt" , price :"$500" , Image: "/images/cartpic4.png"},
           ]
           .map((item) => (
-          <li key={product._id} className="mt-1 w-[500] h-[200]">
+          <li key={item.id} className="mt-1 w-[500] h-[200]">
             <div className="flex w-[300] h-[300]">
               {product.image && (
                 <Image

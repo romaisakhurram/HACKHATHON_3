@@ -119,8 +119,8 @@ export default function ShoppingCart() {
                   </tr>
                 ) : (
                   cartItems.map((item) => (
-                    <tr>
-                      <td key={item._id} className="py-4">
+                    <tr key={item._id}>
+                      <td className="py-4">
                         <div className="flex items-center gap-4">
                           {item.image && (
                             <Image

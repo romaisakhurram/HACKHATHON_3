@@ -16,7 +16,7 @@ import { useParams } from "next/navigation";
 
 async function fetchProduct(slug: string): Promise<Product | null> {
   const product = await client.fetch(
-    groq`*[_type == "product" && slug.current == $slug][0]{
+    groq`*[_type == "product" || slug.current == $slug][0]{
       _id,
       name,
       _type,
@@ -81,7 +81,7 @@ export default function ProductPage() {
       </div>
       <div className="w-full h-[800]">
         <div className="flex justify-center items-center border border-white shadow-lg w-[60%] h-[300px] p-3 mt-10 ml-[20%] gap-5">
-          <div>
+          <div key={product._id}>
             <div>
               {product.image && (
                 <Image
@@ -220,26 +220,34 @@ export default function ProductPage() {
         <h1 className="text-md text-[#151875] font-serif text-3xl font-semibold mt-20 ml-20">
           Latest Product
         </h1>
-        <div className="w-full h-[500] flex justify-center gap-10 mt-5">
-          <div key={product._id} className="mt-1 w-[500] h-[200]">
+        <ul className="w-full h-[500] flex justify-center gap-10 mt-5">
+          {[ {name : "Men Shirt" , price :"$500" , Image: "/images/cartpic1"},
+              {name : "Women Shirt" , price :"$500" , Image: "/images/cartpic2"},
+              {name : "Girls Shirt" , price :"$500" , Image: "/images/cartpic3"},
+              {name : "Girls Shirt" , price :"$500" , Image: "/images/cartpic4"},
+          ]
+          .map((item) => (
+          <li key={product._id} className="mt-1 w-[500] h-[200]">
             <div className="flex w-[300] h-[300]">
               {product.image && (
                 <Image
-                  src={urlFor(product.image).url()}
-                  alt={product.name}
+                  src={item.Image}
+                  alt={item.name}
                   width={180}
                   height={180}
                   className="w-60 h-80"
                 />
               )}
             </div>
-            <div className="text-md font-serif font-bold">
-              <h2>{product.name}</h2>
-              <p>{product.price}</p>
+            <div>
+            <h2 className="text-md font-serif font-bold">{item.name}</h2>
+            <p className="text-md font-serif font-bold">{item.price}</p>
             </div>
-          </div>
-        </div>
+          </li>
+          ))}
+        </ul>
         <div>
+      
           <Image
             src="/images/Signatures.png"
             alt="Signature"
